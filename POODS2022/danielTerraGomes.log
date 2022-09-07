@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.10)  3 SEP 2022 19:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6) (preloaded format=pdflatex 2021.8.10)  7 SEP 2022 10:53
 entering extended mode
 **"c:/Users/danie/OneDrive - pq.uenf.br/Documents/Faculdade/22-2_paradigm_O_O/POODS2022/danielTerraGomes.tex"
 (c:/Users/danie/OneDrive - pq.uenf.br/Documents/Faculdade/22-2_paradigm_O_O/POODS2022/danielTerraGomes.tex
@@ -1086,73 +1086,73 @@ File: Pictures//sistemas.png Graphic file (type png)
 Package pdftex.def Info: Pictures//sistemas.png  used on input line 9.
 (pdftex.def)             Requested size: 597.50787pt x 233.04015pt.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 7273) has occurred while \output is active []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 \subsection{Sistema}
-                          [1
+l.22 
+      [1
 
 
  <./Pictures//sistemas.png>]) (02Requisitos.texpdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
+l.6 
+     [2]pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
 l.8 \chapter
-            {Requisitos do Sistema OO} [2]
+            {Requisitos do Sistema OO} [3]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.8 \chapter
+            {Requisitos do Sistema OO} [4
+
+]
 Cap\'{\i }tulo 2.
-<Pictures//requisitos.jpg, id=188, 578.16pt x 225.4824pt>
+<Pictures//requisitos.jpg, id=197, 578.16pt x 225.4824pt>
 File: Pictures//requisitos.jpg Graphic file (type jpg)
 <use Pictures//requisitos.jpg>
 Package pdftex.def Info: Pictures//requisitos.jpg  used on input line 8.
 (pdftex.def)             Requested size: 597.50787pt x 233.04079pt.
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.46                        \item
-                                  [3
-
- <./Pictures//requisitos.jpg>]pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.113              \item
-                         [4]) (03Modelagem.tex [5] [6
+[5 <./Pictures//requisitos.jpg>] [6]) (03Modelagem.tex [7] [8
 
 ]
 Cap\'{\i }tulo 3.
-<Pictures//modelagem.jpg, id=265, 903.375pt x 352.31625pt>
+<Pictures//modelagem.jpg, id=275, 903.375pt x 352.31625pt>
 File: Pictures//modelagem.jpg Graphic file (type jpg)
 <use Pictures//modelagem.jpg>
 Package pdftex.def Info: Pictures//modelagem.jpg  used on input line 8.
 (pdftex.def)             Requested size: 597.50787pt x 233.04015pt.
-) (04Projeto.tex [7 <./Pictures//modelagem.jpg>] [8
+) (04Projeto.tex [9 <./Pictures//modelagem.jpg>] [10
 
 ]
 Cap\'{\i }tulo 4.
-<Pictures//projeto.png, id=274, 289.08pt x 112.7412pt>
+<Pictures//projeto.png, id=285, 289.08pt x 112.7412pt>
 File: Pictures//projeto.png Graphic file (type png)
 <use Pictures//projeto.png>
 Package pdftex.def Info: Pictures//projeto.png  used on input line 8.
 (pdftex.def)             Requested size: 597.50787pt x 233.04076pt.
-) (05Implement.tex [9 <./Pictures//projeto.png>] [10
+) (05Implement.tex [11 <./Pictures//projeto.png>] [12
 
 ]
 Cap\'{\i }tulo 5.
-<Pictures//Implement.jpg, id=285, 903.375pt x 352.31625pt>
+<Pictures//Implement.jpg, id=295, 903.375pt x 352.31625pt>
 File: Pictures//Implement.jpg Graphic file (type jpg)
 <use Pictures//Implement.jpg>
 Package pdftex.def Info: Pictures//Implement.jpg  used on input line 8.
 (pdftex.def)             Requested size: 597.50787pt x 233.04015pt.
-) (conclusao.tex [11 <./Pictures//Implement.jpg>] [12
+) (conclusao.tex [13 <./Pictures//Implement.jpg>] [14
 
 ]
 Cap\'{\i }tulo 6.
-<Pictures//conclusoes.png, id=294, 1204.5pt x 469.755pt>
+<Pictures//conclusoes.png, id=304, 1204.5pt x 469.755pt>
 File: Pictures//conclusoes.png Graphic file (type png)
 <use Pictures//conclusoes.png>
 Package pdftex.def Info: Pictures//conclusoes.png  used on input line 9.
 (pdftex.def)             Requested size: 597.50787pt x 233.03477pt.
-<Pictures//MeuSistema.jpg, id=295, 1060.56226pt x 430.0065pt>
+<Pictures//MeuSistema.jpg, id=305, 1060.56226pt x 430.0065pt>
 File: Pictures//MeuSistema.jpg Graphic file (type jpg)
 <use Pictures//MeuSistema.jpg>
 Package pdftex.def Info: Pictures//MeuSistema.jpg  used on input line 23.
@@ -1161,30 +1161,30 @@ Package pdftex.def Info: Pictures//MeuSistema.jpg  used on input line 23.
 \tf@brf=\write6
 \openout6 = `danielTerraGomes.brf'.
 
- [13 <./Pictures//conclusoes.png> <./Pictures//MeuSistema.jpg>] [14
+ [15 <./Pictures//conclusoes.png> <./Pictures//MeuSistema.jpg>] [16
 
 ]
-<Pictures//referencias.png, id=305, 903.375pt x 352.31625pt>
+<Pictures//referencias.png, id=316, 903.375pt x 352.31625pt>
 File: Pictures//referencias.png Graphic file (type png)
 <use Pictures//referencias.png>
 Package pdftex.def Info: Pictures//referencias.png  used on input line 1.
 (pdftex.def)             Requested size: 597.50787pt x 233.04015pt.
-) [15 <./Pictures//referencias.png>] (danielTerraGomes.aux)
+) [17 <./Pictures//referencias.png>] (danielTerraGomes.aux)
 Package rerunfilecheck Info: File `danielTerraGomes.brf' has not changed.
-(rerunfilecheck)             Checksum: 8FE2FCBD83F682668E2796C29B50F9D1;439.
+(rerunfilecheck)             Checksum: C0E4B3D634DA966644E1265D6B743DB3;493.
  ) 
 Here is how much of TeX's memory you used:
- 32515 strings out of 478864
- 646330 string characters out of 2848660
- 1146172 words of memory out of 3000000
- 49404 multiletter control sequences out of 15000+600000
- 479799 words of font info for 241 fonts, out of 8000000 for 9000
+ 32533 strings out of 478864
+ 646594 string characters out of 2848660
+ 1146219 words of memory out of 3000000
+ 49410 multiletter control sequences out of 15000+600000
+ 480284 words of font info for 247 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  89i,11n,92p,989b,1167s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/danie/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/danie/AppData/Local/Programs/MiKTeX/fonts/type1/urw/avantgar/uagd8a.pfb><C:/Users/danie/AppData/Local/Programs/MiKTeX/fonts/type1/urw/avantgar/uagk8a.pfb><C:/Users/danie/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/danie/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/danie/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on danielTerraGomes.pdf (19 pages, 4222024 bytes).
+Output written on danielTerraGomes.pdf (21 pages, 4224689 bytes).
 PDF statistics:
- 477 PDF objects out of 1000 (max. 8388607)
- 121 named destinations out of 1000 (max. 500000)
+ 488 PDF objects out of 1000 (max. 8388607)
+ 124 named destinations out of 1000 (max. 500000)
  85955 words of extra memory for PDF output out of 89155 (max. 10000000)
 
