@@ -1,1 +1,17 @@
 garbage
+pytorch-chatbot/garbage
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fdb_latexmk
+*.fls
+*.idx
+*.ilg
+*.ind
+*.log
+*.lot
+*.synctex.gz
+*.toc
+teste
+turbochat

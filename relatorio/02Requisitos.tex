@@ -1,0 +1,164 @@
+% Prof. Dr. Ausberto S. Castro Vera
+% UENF - CCT - LCMAT - Curso de Ci\^{e}ncia da Computa\c{c}\~{a}o
+% Campos, RJ,  2022
+% Disciplina: Paradigma de Desenvolvimento Orientado a Objetos
+% Aluno:
+
+\chapterimage{requisitos.jpg} % Table of contents heading image
+\chapter{Requisitos do Sistema OO}
+
+O Requisito do Sistema inclui um conjunto de tarefas que devem ser executadas para criar uma documentação de requisitos como um produto final. Tudo o que consta nos documentos permite que o software seja criado, atualizado e reparado sempre que necessário, de acordo com o estabelecido inicialmente.
+
+
+
+Neste cap\'{\i}tulo \'{e} apresentado listas, defini\c{c}\~{o}es e especifica\c{c}\~{o}es de Requisitos do sistema ser desenvolvido. Os requisitos s\~{a}o declara\c{c}\~{o}es abstratas de alto n\'{\i}vel sobre os \textit{servi\c{c}os} que o sistema deve prestar \`{a} organiza\c{c}\~{a}o, e as \textit{restri\c{c}\~{o}es} sobre as quais deve operar. Os requisitos sempre refletem as necessidades dos clientes do sistema.
+
+Sobre os requisitos,  Raul S. Wazlawick afirma:
+\begin{citadireta}
+  A \textit{etapa de levantamento de requisitos} corresponde a buscar todas as informa\c{c}\~{o}es poss\'{\i}veis sobre as fun\c{c}\~{o}es que o sistema deve executar e as restri\c{c}\~{o}es sobre as quais o sistema deve operar. O produto dessa etapa ser\'{a} o documento de requisitos, principal componente do anteprojeto de software.
+
+  A \textit{etapa de an\'{a}lise de requisitos} serve para estruturar e detalhar os requisitos de forma que eles possam ser abordados na fase de elabora\c{c}\~{a}o para o desenvolvimento  de outros elementos como casos de uso, classes e interfaces.
+
+  O levantamento de requisitos \'{e} o processo de descobrir quais s\~{a}o as \textit{fun\c{c}\~{o}es} que o sistema deve realizar e quais s\~{a}o as \textit{restri\c{c}\~{o}es} que existem sobre estas fun\c{c}\~{o}es  \cite{Wazlawick2011}.
+\end{citadireta}
+
+
+
+\section{ Requisitos Funcionais}
+Como parte da fase de coleta, requisitos funcionais são todos os problemas e necessidades que precisam ser atendidos e resolvidos pelo software por meio de recursos ou serviços. Nesta seção trataremos dos requisitos funcionais:
+
+\subsection{Subsistema do usuário}
+%%%%%%%%%%%------------------------
+\begin{enumerate}
+  \item Cadastro de novos usuário;
+  \item Edição de informações cadastrais;
+  \item Deletar do usuário;
+  \item Gerenciamento de mensagens do usuário;
+  \item Gerenciamento de grupos criados pelo usuário.
+\end{enumerate}
+\subsection{Subsistema de Grupos}
+%%%%%%%%%%%------------------------
+\begin{enumerate}
+  \item Criar grupo;
+  \item Edição de informações de grupo;
+  \item Exclusão de grupo;
+  \item Listagem de pessoas em grupo;
+  \item Mensagem para todos os membros do grupo.
+\end{enumerate}
+
+\subsection{Subsistema de Login}
+%%%%%%%%%%%------------------------
+\begin{enumerate}
+  \item Realizar a verificação dos dados do usuário ao login;
+  \item Gerar token de autenticação;
+  \item Permitir acesso funcionalidade apenas a usuários habilitados;
+  \item Realizar cadastro de novas credenciais de usuários;
+  \item Verificar se o usuário já está cadastrado;
+  \item Permitir troca de senha de usuários cadastrados.
+
+\end{enumerate}
+
+\subsection{Subsistema de elaboração de relatórios}
+%%%%%%%%%%%------------------------
+\begin{enumerate}
+  \item O sistema deve permitir o registro e atualização de relatórios no sistema;
+  \item Cada relatório só pode ser atribuído a uma usuario;
+  \item Cada relatório só pode ser atribuído a uma grupo;
+  \item Relatório pode ser visto por todos os membros do grupo.
+
+\end{enumerate}
+
+\subsection{Subsistema de Acesso ao Sistema}
+%%%%%%%%%%%------------------------
+\begin{enumerate}
+  \item Somente usuários cadastrados podem acessar o sistema;
+  \item O sistema deve permitir o acesso via e-mail;
+  \item O sistema deve fornecer um recurso de recuperação de senha;
+  \item O registro de um usuário não pode ser realizado se já houver um usuário cadastrado com os mesmos dados de e-mail.
+
+\end{enumerate}
+
+
+
+
+
+\section{ Requisitos N\~{a}o-Funcionais}
+
+Requisitos não funcionais são todos os requisitos relacionados a como o software implementa a realidade pretendida. Enquanto os requisitos funcionais se concentram no que é feito, os requisitos não funcionais descrevem como é feito.
+
+Assim, todos os requisitos de sistema, hardware, software e operacionais são documentados separadamente \cite{Dennis2014}.
+\subsection{Requisitos de Usabilidade }
+%%%%%%%%%%%------------------------
+\begin{enumerate}
+  \item O sistema deve fornecer uma interface fácil de navegar;
+  \item O sistema deve atingir um nível de desempenho satisfatório em sistemas leves;
+  \item O software deve realizar as ações com o mínimo de interações;
+  \item A interface deve se adaptar a diferentes dispositivos;
+  \item A implementação da interface deve seguir um padrão para garantir consistência;
+  \item A interface deve ser esteticamente agradável ao usuário.
+\end{enumerate}
+
+
+\subsection{Requisitos de Confiabilidade }
+%%%%%%%%%%%------------------------
+\begin{enumerate}
+  \item Mantenha sempre os dados atualizados;
+  \item Tolerância a falhas do sistema;
+  \item Prevenção de falhas;
+  \item Manipulação de erros;
+  \item Em caso de erro ou falha, o sistema deve ser capaz de recuperar os dados;
+  \item O sistema deve notificar o usuário quando uma operação foi bem-sucedida ou falhou;
+  \item Todos os subsistemas de software devem ser monitorados.
+\end{enumerate}
+
+
+\subsection{Requisitos de Disponibilidade }
+%%%%%%%%%%%------------------------
+\begin{enumerate}
+  \item O sistema deve estar sempre disponível para o usuário, exceto em dias de manutenção;
+  \item Durante a manutenção, o sistema pode ficar offline indefinidamente;
+  \item O sistema deve ser capaz de receber mais de 50 solicitações por minuto sem criar instabilidade;
+  \item A manutenção pode ser realizada conforme necessário.
+\end{enumerate}
+
+
+\subsection{Requisitos de Privacidade }
+%%%%%%%%%%%------------------------
+\begin{enumerate}
+  \item Os dados insensíveis do usuário não precisam ser criptografados;
+  \item Garantir que os dados do usuário sejam usados apenas na plataforma;
+  \item Os dados do usuário só são coletados pela plataforma com a devida permissão do utilizador;
+  \item Os contatos do usuário são coletados apenas com o consentimento do usuário;
+  \item O sistema deve respeitar as leis de proteção de dados da região em que é utilizado;
+  \item O sistema pode permitir o cache de senhas;
+  \item As informações transmitidas podem não estar protegidas por técnicas de criptografia;
+  \item Nenhum dado pode ser compartilhado sem a permissão do proprietário;
+  \item O sistema pode coletar dados que não são críticos para o negócio.
+\end{enumerate}
+
+
+\subsection{Requisitos de Acesso }
+%%%%%%%%%%%------------------------
+\begin{enumerate}
+  \item Somente usuários cadastrados e autenticados ou com link de acesso devem acessar a plataforma;
+  \item Garanta que os grupos privados sejam acessados apenas por usuários autenticados;
+  \item Certifique-se de que os grupos sejam editados apenas pelo usuário do grupo;
+  \item Os grupos só podem ser excluídos pelo usuário moderador;
+  \item Todos os usuários autenticados podem marcar grupos.
+\end{enumerate}
+
+
+\section{Requisitos de Neg\'{o}cios}
+Requisitos do neg\'{o}cio s\~{a}o requisitos de alto n\'{\i}vel que explicam e justificar qualquer projeto. Os requisitos de neg\'{o}cios s\~{a}o as atividades cr\'{\i}ticas de uma empresa que devem ser executadas para atender ao(s) objetivo(s) organizacional(is) enquanto permanecem independentes do sistema solu\c{c}\~{a}o.
+
+
+Para esse sistema os requisitos de negócios são os a seguir:
+\vspace{1em}
+\begin{enumerate}
+  \item Facilitar a comunicação entre as pessoas em todo o país;
+  \item O sistema deve permitir que o usuário se comunique com outros usuários do sistema;
+  \item Fornecimento de funções de gestão de mensagens;
+  \item Oferecer aos usuários o número de mensagens em seus grupos;
+  \item Aumentar o número de usuários ativos na plataforma;
+  \item Melhore a segurança e a transparência dos dados e processos de negócios.
+\end{enumerate}
