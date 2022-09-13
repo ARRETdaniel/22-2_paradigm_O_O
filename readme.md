@@ -7,7 +7,7 @@
 Ausberto S. Castro Vera - Sistema de Comunicação Distribuído</h3>
 
 <p align="center">
-  <img width="100%" height="100%" src="POODS2022\Pictures\danielTerraGomes.jpg" alt="Book"></a>
+  <img width="100%" height="100%" src="relatorio\Pictures\danielTerraGomes.jpg" alt="Book"></a>
 </p>
 
 ## Initial Setup:
