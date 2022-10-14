@@ -21,6 +21,8 @@ Clone repo And Setup
 ```
 git clone https://github.com/ARRETdaniel/22-2_paradigm_O_O.git
 ```
+
+```
 detele Gemfile.lock
 ```
 
@@ -31,15 +33,13 @@ update Ruby version of Gemfile to your version
 ```
 then Bundle update
 ```
+
 ```
 bundle install
 ```
+
 ```
 rails s
-```
-### Tips (Erros)
-```
-Open your code environment as Adm
 ```
 
 * Database initialization
@@ -47,6 +47,13 @@ Open your code environment as Adm
 ```
 rails db:migrate
 ```
+
+### Tips (Erros)
+
+```
+Open your code environment as Adm
+```
+
 
 ## Credits:
 
