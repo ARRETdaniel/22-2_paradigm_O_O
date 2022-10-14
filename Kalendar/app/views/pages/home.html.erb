@@ -1,0 +1,36 @@
+<div class="container mt-5 text-center">
+  <h1>Kalender</h1>
+  <p>Seja Bem-vindu:</p>
+  <h5> <%= current_user.email.split('@')[0].capitalize %> </h5>
+
+
+<form action="http://127.0.0.1:3000/consultations/new">
+<button class="button1 button1">Criar nova atividade!</button>
+</form>
+
+  <%= month_calendar(events: @consultations) do |date, consultations| %>
+    <div class="day">
+      <%= date %>
+    </div>
+    <% consultations.each do |consultation| %>
+      <div class="card-header">
+        <h5 class="card-title">
+          <%= link_to consultation.title, consultation %>
+        </h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          <%= consultation.description %>
+        </p>
+      </div>
+      <div class="card-footer">
+        <p class="card-text">
+          From: <%= consultation.start_time.strftime('%A, %B %d, %Y at %I:%M %p') %>
+        </p>
+        <p class="card-text">
+          To: <%= consultation.end_time.strftime('%A, %B %d, %Y at %I:%M %p') %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,15 @@
+ <h1>Kalender</h1>
+  <p>Não perca nada! Crie já seu Kalendário</p>
+
+
+
+
+
+  <% if current_user %>
+  <h5> Usuario atual: <%= current_user.email.split('@')[0].capitalize %> </h5>
+    <%= link_to "Crie já seu Calendário", pages_home_path %>
+    <%= button_to "SAIR", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "CADASTRO", new_user_registration_path %>
+    <%= link_to "ENTRAR", new_user_session_path %>
+  <% end %>
