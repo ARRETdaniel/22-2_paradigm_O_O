@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  #get 'land/landpage'
   resources :posts
   devise_for :users
   get 'aboutus/aboutus'
-  root 'pages#home1'
-  get 'pages/home'
+  #get 'pages/home'
+  root 'pages#home'
   resources :consultations
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

@@ -1,0 +1,192 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+.simple-calendar {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+.day {
+  padding: 5px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.wday-0 {
+  color: #f00;
+}
+
+.wday-1 {
+  color: #000;
+}
+
+.wday-2 {
+  color: #000;
+}
+
+.wday-3 {
+  color: #000;
+}
+
+.wday-4 {
+  color: #000;
+}
+
+.wday-5 {
+  color: #000;
+}
+
+.wday-6 {
+  color: rgb(202, 0, 0);
+}
+
+.today {
+  background-color: #f0f0f0;
+}
+
+.past {
+  color: #ccc;
+}
+
+.future {
+  color: #000;
+}
+
+.start-date {
+  background-color: #f0f0f0;
+}
+
+.prev-month {
+  color: #ccc;
+}
+
+.next-month {
+  color: #ccc;
+}
+
+.current-month {
+  color: #000;
+}
+
+.has-events {
+  background-color: #f0f0f0;
+}
+
+.button1 {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: #4CAF50;
+}
+
+/* Green */
+.button2 {
+  background-color: #008CBA;
+}
+
+/* Blue */
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after,
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.div {
+  text-align: justify;
+}

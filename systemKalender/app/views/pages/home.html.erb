@@ -4,10 +4,14 @@
 
 
 
-
   <% if current_user %>
   <h5> Usuario atual: <%= current_user.email.split('@')[0].capitalize %> </h5>
-    <%= link_to "Crie já seu Calendário", pages_home_path %>
+    <%= link_to "Crie já seu Calendário", lands_landpage_path %>
+
+    <form action="http://[::1]:3000/lands/landpage">
+    <button class="button2 button1">VER KALENDER</button>
+    </form>
+
     <%= button_to "SAIR", destroy_user_session_path, method: :delete %>
   <% else %>
     <%= link_to "CADASTRO", new_user_registration_path %>
