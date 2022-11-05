@@ -24,7 +24,7 @@ class ConsultationsController < ApplicationController
   def create
     @consultation = Consultation.new(consultation_params)
      ## new line
-    @consultation.user = current_user
+   # @consultation.user = current_user
 
     respond_to do |format|
       if @consultation.save

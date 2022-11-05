@@ -13,13 +13,13 @@ A abstração, característica essencial dos modelos, permite compreender o cont
 
 
 \begin{itemize}
-  \item Diagrama de fluxo de dados: representação gráfica do fluxo de dados geral do sistema.
-  \item Diagrama de Relacionamento de Entidade: Mostra o relacionamento entre entidades do sistema, como: B. a relação entre o usuário e a propriedade.
-  \item Diagrama de Classes: Representa a estrutura de classes do sistema, mostrando os atributos e métodos de cada classe.
-  \item Diagrama de Casos de Uso: Representação gráfica de casos de uso ou situações em que um objeto pode estar no sistema em um determinado momento.
-  \item Fluxograma: Mostra a sequência de processos do sistema
-  \item Diagrama de Atividades: Mostra o fluxo de controle das atividades do sistema.
-  \item Diagrama de Estado: Representa a situação em que o sistema se encontra em um determinado momento ou durante o processo.
+      \item Diagrama de fluxo de dados: representação gráfica do fluxo de dados geral do sistema.
+      \item Diagrama de Relacionamento de Entidade: Mostra o relacionamento entre entidades do sistema, como: B. a relação entre o usuário e a propriedade.
+      \item Diagrama de Classes: Representa a estrutura de classes do sistema, mostrando os atributos e métodos de cada classe.
+      \item Diagrama de Casos de Uso: Representação gráfica de casos de uso ou situações em que um objeto pode estar no sistema em um determinado momento.
+      \item Fluxograma: Mostra a sequência de processos do sistema
+      \item Diagrama de Atividades: Mostra o fluxo de controle das atividades do sistema.
+      \item Diagrama de Estado: Representa a situação em que o sistema se encontra em um determinado momento ou durante o processo.
 
 
 \end{itemize}
@@ -32,31 +32,31 @@ O diagrama de fluxo de dados é um diagrama que mostra o fluxo de dados de um si
 \subsection{Diagramas DFD Login - entidade externa}
 O diagrama de fluxo de dados do nível 1 do sistema possui 3 entidades: Registros de usuários, Login, Pesquisa de usuários.
 \begin{itemize}
-  \item Cadastro de Usuário: Nesta entidade, o usuário preenche um formulário com dados pessoais e senha, em seguida os dados são processados pelo sistema e armazenados no banco de dados.
-  \item Login: O usuário insere as credenciais de acesso ao sistema e o sistema verifica se as credenciais são válidas. Se forem válidos, o sistema salva o token de acesso do usuário no armazenamento local, caso contrário, o sistema retorna uma mensagem de erro.
-  \item Buscar Usuários: As informações do usuário são fornecidas nesta entidade, então o sistema procura os usuários que possuem as informações fornecidas
+      \item Cadastro de Usuário: Nesta entidade, o usuário preenche um formulário com dados pessoais e senha, em seguida os dados são processados pelo sistema e armazenados no banco de dados.
+      \item Login: O usuário insere as credenciais de acesso ao sistema e o sistema verifica se as credenciais são válidas. Se forem válidos, o sistema salva o token de acesso do usuário no armazenamento local, caso contrário, o sistema retorna uma mensagem de erro.
+      \item Buscar Usuários: As informações do usuário são fornecidas nesta entidade, então o sistema procura os usuários que possuem as informações fornecidas
 
 \end{itemize}
 
 \begin{figure}[H]
-  \begin{center}
-      \includegraphics[width=12cm]{Pictures/diagram/loginNv1.png}
-      \caption{Fluxo de dados do sistema Cadastro} \label{loginNV1}
-    \end{center}
-  \end{figure}
-
-  \subsection{Diagramas DFD Login - entidade interno - Login}
-  O diagrama de fluxo de dados de nível 2 mostrado é o subsistema de login que possui a entidade de usuário onde o endereço de email e a senha do usuário são fornecidos, então as informações são processadas pelo sistema e verificam se as credenciais são válidas.
-  \begin{figure}[H]
-    \begin{center}
-        \includegraphics[width=12cm]{Pictures/diagram/loginNv2.png}
-        \caption{Fluxo de dados do sistema Login} \label{loginNV2}
+      \begin{center}
+            \includegraphics[width=12cm]{Pictures/diagram/loginNv1.png}
+            \caption{Fluxo de dados do sistema Cadastro} \label{loginNV1}
       \end{center}
-    \end{figure}
+\end{figure}
+
+\subsection{Diagramas DFD Login - entidade interno - Login}
+O diagrama de fluxo de dados de nível 2 mostrado é o subsistema de login que possui a entidade de usuário onde o endereço de email e a senha do usuário são fornecidos, então as informações são processadas pelo sistema e verificam se as credenciais são válidas.
+\begin{figure}[H]
+      \begin{center}
+            \includegraphics[width=12cm]{Pictures/diagram/loginNv2.png}
+            \caption{Fluxo de dados do sistema Login} \label{loginNV2}
+      \end{center}
+\end{figure}
 \section{Diagramas E-R}
 O diagrama E-R é a representação gráfica de uma entidade relacional, onde a entidade é representada por um objeto e os relacionamentos são representados por relacionamentos. O diagrama E-R do sistema Buscalar completo é mostrado no exemplo dessa subseção.
 
-O diagrama E-R do sistema de Chat possui as seguintes entidades: Usuário, Chat. Possui também os links: Usuários logado, onde o usuário pode cadastrar um ou mais grupos.
+O diagrama E-R do sistema de agenda possui as seguintes entidades: Usuário, agenda. Possui também os links: Usuários logado, onde o usuário pode cadastrar um ou mais agendas.
 
 
 \section{Diagramas de Classes}
@@ -125,24 +125,24 @@ No subsistema de usuário, você pode alterar os detalhes do usuário, alterar s
 O diagrama de sequência é uma solução de modelagem dinâmica popular em UML porque se concentra especificamente nas linhas de vida, ou nos processos e objetos que vivem ao mesmo tempo e nas mensagens trocadas entre eles para executar uma função antes que a linha de vida termine.
 
 \begin{figure}[H]
-  \begin{center}
-        \caption{Diagrama de sequência de login} \label{afp}
-        \includegraphics[width=15cm]{Pictures/diagram/sequencia.png} \\
+      \begin{center}
+            \caption{Diagrama de sequência de login} \label{afp}
+            \includegraphics[width=15cm]{Pictures/diagram/sequencia.png} \\
 
 
-  \end{center}
+      \end{center}
 \end{figure}
 Primeiro, o usuário faz login com o endereço de e-mail e a senha, depois o autenticador se comunica com o sistema e verifica se o usuário existe. Nesse caso, o sistema cria uma sessão para o usuário e retorna o acesso de verificação ou token (um código gerado pelo sistema e usado para realizar operações no sistema). Por fim, mostrará que o usuário está logado, então ele será redirecionado para a página principal.
 \section{Diagramas de Atividades}
 Um diagrama de atividades é essencialmente um fluxograma que mostra as atividades realizadas por um sistema. Assim, ilustra o fluxo ou sequência de ações executadas em um sistema.
 
 \begin{figure}[H]
-  \begin{center}
-        \caption{Diagrama de atividade de login} \label{afp}
-        \includegraphics[width=15cm]{Pictures/diagram/atividade.png} \\
+      \begin{center}
+            \caption{Diagrama de atividade de login} \label{afp}
+            \includegraphics[width=15cm]{Pictures/diagram/atividade.png} \\
 
 
-  \end{center}
+      \end{center}
 \end{figure}
 Primeiramente o usuário será levado para a tela de login onde será submetido a uma verificação se o usuário já está cadastrado, caso contrário o usuário será levado para a tela de cadastro do usuário, caso contrário será levado para a tela de login. Se o usuário estiver cadastrado, o usuário compartilhará o endereço de e-mail e a senha, então será realizada uma verificação, se o endereço de e-mail e a senha forem válidos, se não forem válidos, o usuário irá para a tela de login caso contrário será direcionado para a tela inicial do aplicativo.
 
@@ -150,12 +150,12 @@ Caso o usuário não esteja cadastrado, o usuário será direcionado para a tela
 \section{Diagramas Estado}
 Um diagrama de estado, às vezes chamado de diagrama de máquina de estado, é um tipo de diagrama de comportamento na Unified Modeling Language (UML) que mostra transições entre diferentes objetos.
 \begin{figure}[H]
-  \begin{center}
-        \caption{Diagrama de estado de login} \label{afp}
-        \includegraphics[width=15cm]{Pictures/diagram/estado.png} \\
+      \begin{center}
+            \caption{Diagrama de estado de login} \label{afp}
+            \includegraphics[width=15cm]{Pictures/diagram/estado.png} \\
 
 
-  \end{center}
+      \end{center}
 \end{figure}
 Ao abrir o sistema ele verificará primeiro se o usuário está logado, se estiver o usuário será levado para a tela inicial, caso contrário para a tela de login onde será verificado se o usuário já está cadastrado, caso contrário o usuário será levado para a tela de cadastro do usuário, caso contrário, ele será direcionado para a tela de login. Se o usuário estiver cadastrado, o usuário fornecerá o e-mail e a senha, então será feita uma verificação, se o e-mail e a senha forem válidos, caso não sejam válidos, o usuário será levado para a tela de login. Caso o usuário não esteja cadastrado, o usuário será direcionado para a tela de cadastro de usuário onde será enviado um formulário para que o usuário preencha os dados onde estão inseridos nome, e-mail, telefone e senha.
 

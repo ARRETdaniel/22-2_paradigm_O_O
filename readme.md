@@ -60,4 +60,4 @@ Open your code environment as Adm
 - [Create A Simple Calendar In Ruby On Rails 7](https://youtu.be/NhAGTL4ARfw)
 - [User And Admin Accounts With Devise | Authentication Ruby On Rails 5.2 Tutorial](https://youtu.be/7v2EMmfBJL8)
 - [How TO - About Page](https://www.w3schools.com/HOWTO/howto_css_about_page.asp)
-* [SYNC FREE CSS TEMPLATE](https://www.free-css.com/free-css-templates/page274/sync)
+- [SYNC FREE CSS TEMPLATE](https://www.free-css.com/free-css-templates/page274/sync)
