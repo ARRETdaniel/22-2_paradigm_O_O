@@ -1,36 +1,339 @@
+
 % Prof. Dr. Ausberto S. Castro Vera
 % UENF - CCT - LCMAT - Curso de Ci\^{e}ncia da Computa\c{c}\~{a}o
-% Campos, RJ,  2022 
+% Campos, RJ,  2022
 % Disciplina: Paradigma de Desenvolvimento Orientado a Objetos
 % Aluno:
 
 \chapterimage{Implement.jpg} % Table of contents heading image
 \chapter{Implementa\c{c}\~{a}o do Sistema OO}
 
-Neste cap\'{\i}tulo ....
+Este capítulo apresentará a implementação do sistema como as classes que foram desenvolvidas, os módulos que foram utilizados e a documentação do sistema com instruções para o usuário instalar e utilizar o sistema.
 
-   \section{Programa\c{c}\~{a}o}
-   Listar:
-   \begin{itemize}
-     \item Todas as classes implementadas na linguagem OO (sem os m\'{e}todos)
-     \item Todos os m\'{o}dulos ou subsistemas (diagramas ou arquitetura implementada)
-     \item Partes importantes do c\'{o}digo fonte implementado
-     \item As bases de dados implementadas
-   \end{itemize}
-
-
-   \section{Documenta\c{c}\~{a}o do Software}
-
-   Indicar e explicar:
-   \begin{itemize}
-     \item \textbf{Manual de Instala\c{c}\~{a}o}: O qu\'{e} \'{e} necess\'{a}rio para instalar o sistema desenvolvido (banco de dados, vers\~{a}o, bibliotecas, etc.)
-     \item \textbf{Manual do usu\'{a}rio}: Os pasos b\'{a}sicos para utilizar o sistema (inicializar, salvar, imprimir, etc.)
-     \item \textbf{Outros}....
-   \end{itemize}
+\section{Programa\c{c}\~{a}o}
+Para a construção do sistema foram utilizadas 3 tecnologias principais:
+\begin{itemize}
+  \item Framework Ruby on Rails: criação da API (Interface de Programação de Aplicações) que disponibiliza o acesso aos dados.
+  \item Ruby: Ruby é uma linguagem de programação interpretada, de alto nível e de propósito geral que suporta vários paradigmas de programação.
+  \item SQLite: Biblioteca desenvolvida em C, que funciona como um banco de dados relacional.
+\end{itemize}
 
 
+\subsection{Classes}
+
+Na modelagem do sistema desenvolvido foram definidas mais classes, no entanto, devido à complexidade e a fim de atender aos requisitos do trabalho proposto, somente foram implementadas as apresentadas a seguir:
+
+
+\begin{lstlisting}[language=Ruby, caption=Ruby Controller]
+class ConsultationsController < ApplicationController
+  before_action :set_consultation, only: %i[ show edit update destroy ]
+### new line below
+  before_action :authenticate_user!, except: [:show, :index]
+  # GET /consultations or /consultations.json
+  def index
+    @consultations = Consultation.all
+  end
+
+  # GET /consultations/1 or /consultations/1.json
+  def show
+  end
+
+  # GET /consultations/new
+  def new
+    @consultation = Consultation.new
+  end
+
+  # GET /consultations/1/edit
+  def edit
+  end
+
+  # POST /consultations or /consultations.json
+  def create
+    @consultation = Consultation.new(consultation_params)
+     ## new line
+   # @consultation.user = current_user
+
+    respond_to do |format|
+      if @consultation.save
+        format.html { redirect_to consultation_url(@consultation), notice: "Consultation was successfully created." }
+        format.json { render :show, status: :created, location: @consultation }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @consultation.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /consultations/1 or /consultations/1.json
+  def update
+    respond_to do |format|
+      if @consultation.update(consultation_params)
+        format.html { redirect_to consultation_url(@consultation), notice: "Consultation was successfully updated." }
+        format.json { render :show, status: :ok, location: @consultation }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @consultation.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /consultations/1 or /consultations/1.json
+  def destroy
+    @consultation.destroy
+
+    respond_to do |format|
+      format.html { redirect_to consultations_url, notice: "Consultation was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_consultation
+      @consultation = Consultation.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    def consultation_params
+      params.require(:consultation).permit(:title, :description, :start_time, :end_time)
+    end
+end
+
+
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=Ruby, caption=Ruby LandsController]
+  class LandsController < ApplicationController
+  def landpage
+    @consultations = Consultation.where(
+      start_time: Time.now.beginning_of_month.beginning_of_week..Time.now.end_of_month.end_of_week
+    )
+  end
+end
+
+\end{lstlisting}
+
+\subsection{Código Fonte}
+
+Aqui, serão apresentados alguns blocos de código extremamente importantes para o funcionamento do software. Após o login no sistema, a primeira página com a qual o usuário interage é a tela inicial. Esta página é composta por vários componentes e todos eles são "chamados" no código abaixo:
+
+
+\begin{lstlisting}[language=Ruby, caption=Landpage]
+
+<div class="container mt-5 text-center">
+  <h1>Kalender</h1>
+  <p>Seja Bem-vindu:</p>
+
+  <h5> <%= current_user.email.split('@')[0].capitalize %> </h5>
+
+
+<form action="http://[::1]:3000/consultations/new">
+<button class="button1 button1">Criar nova atividade!</button>
+</form>
+
+  <%= month_calendar(events: @consultations) do |date, consultations| %>
+    <div class="day">
+      <%= date %>
+    </div>
+    <% consultations.each do |consultation| %>
+      <div class="card-header">
+        <h5 class="card-title">
+          <%= link_to consultation.title, consultation %>
+        </h5>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          <%= consultation.description %>
+        </p>
+      </div>
+      <div class="card-footer">
+        <p class="card-text">
+          From: <%= consultation.start_time.strftime('%A, %B %d, %Y at %I:%M %p') %>
+        </p>
+        <p class="card-text">
+          To: <%= consultation.end_time.strftime('%A, %B %d, %Y at %I:%M %p') %>
+        </p>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+
+
+
+
+\end{lstlisting}
+
+\subsection{Banco da Dados}
+
+
+\begin{lstlisting}[language=Ruby, caption=CreateConsultations]
+
+class CreateConsultations < ActiveRecord::Migration[7.0]
+  def change
+    create_table :consultations do |t|
+      t.string :title
+      t.text :description
+      t.datetime :start_time
+      t.datetime :end_time
+
+      t.timestamps
+    end
+  end
+end
+
+
+
+\end{lstlisting}
+
+\begin{lstlisting}[language=Ruby, caption=AddAdminToUser]
+class AddAdminToUser < ActiveRecord::Migration[7.0]
+  def change
+    add_column :users, :admin, :boolean, default: false
+  end
+end
 
 
 
 
 
+\end{lstlisting}
+
+\begin{lstlisting}[language=Ruby, caption=DeviseCreateUsers]
+
+# frozen_string_literal: true
+
+class DeviseCreateUsers < ActiveRecord::Migration[7.0]
+  def change
+    create_table :users do |t|
+      ## Database authenticatable
+      t.string :email,              null: false, default: ""
+      t.string :encrypted_password, null: false, default: ""
+
+      ## Recoverable
+      t.string   :reset_password_token
+      t.datetime :reset_password_sent_at
+
+      ## Rememberable
+      t.datetime :remember_created_at
+
+      ## Trackable
+      # t.integer  :sign_in_count, default: 0, null: false
+      # t.datetime :current_sign_in_at
+      # t.datetime :last_sign_in_at
+      # t.string   :current_sign_in_ip
+      # t.string   :last_sign_in_ip
+
+      ## Confirmable
+      # t.string   :confirmation_token
+      # t.datetime :confirmed_at
+      # t.datetime :confirmation_sent_at
+      # t.string   :unconfirmed_email # Only if using reconfirmable
+
+      ## Lockable
+      # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
+      # t.string   :unlock_token # Only if unlock strategy is :email or :both
+      # t.datetime :locked_at
+
+
+      t.timestamps null: false
+    end
+
+    add_index :users, :email,                unique: true
+    add_index :users, :reset_password_token, unique: true
+    # add_index :users, :confirmation_token,   unique: true
+    # add_index :users, :unlock_token,         unique: true
+  end
+end
+
+
+
+
+
+\end{lstlisting}
+
+\subsection{Código Fonte - About Us}
+
+\begin{lstlisting}[language=Ruby, caption=About Us]
+<div class="about-section">
+  <h1>Kalendar</h1>
+
+  <p class="div">Nossa missao e ser um calendario online que permite que um ou mais usuarios editem e, opcionalmente, compartilhem com outros usuarios o acesso online a um calendario.
+
+A partir dos nossos servicos podera fazer uso de uma ferramenta indispensavel. Pois, nossas vidas diarias sao gerenciaveis apenas gracas aos nossos calendarios em nossos computadores e telefones. Um calendario online permite-nos gerir os nossos horarios e ajuda-nos na gestao do tempo. Pense em todas as vezes que as pessoas se esquecem de suas reunioes e compromissos agendados. As consequencias incluem remarcar as reunioes para uma data muito posterior ou ate mesmo pagar uma taxa por faltar a um compromisso. Um calendario online permite que voce sempre acompanhe suas reunioes e compromissos.</p>
+
+</div>
+
+<h2 style="text-align:center">Nosso Time</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="https://media-exp1.licdn.com/dms/image/C4E03AQFXwSHsXB5A-w/profile-displayphoto-shrink_200_200/0/1653855378664?e=1671062400&v=beta&t=JnZi5-8DhyHSwJWl68lXvud1KkoxXQDeGJyuVxGWdRY" alt="Daniel" style="width:5%">
+      <div class="container">
+        <h2>Daniel Terra Gomes</h2>
+        <p class="title">Estudante</p>
+        <p>Computer Science | Machine Learning Enthusiast | AI Ethics</p>
+        <p>danielterra@pq.uenf.br</p>
+        <p><button class="button">Contato</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="https://media-exp1.licdn.com/dms/image/C5603AQHKXoHRT58ayQ/profile-displayphoto-shrink_200_200/0/1516814846280?e=1671062400&v=beta&t=cic_dbtWwgtjWRRnokSRsCxRugh6w52FOZYAksyRxEs" alt="Ausberto" style="width:5%">
+      <div class="container">
+        <h2>Ausberto S. Castro Vera</h2>
+        <p class="title">Professor</p>
+        <p>PhD Computer Science: Software Engineering, Requirements Engineering, Computer Security, Cloud Computing</p>
+        <p>ascv@uenf.br</p>
+        <p><button class="button">Contato</button></p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+
+\end{lstlisting}
+\section{Documenta\c{c}\~{a}o do Software}
+
+Manual de Instalação
+\begin{itemize}
+  \item \textbf{Manual de Instala\c{c}\~{a}o}: O qu\'{e} \'{e} necess\'{a}rio para instalar o sistema desenvolvido (banco de dados, vers\~{a}o, bibliotecas, etc.)
+  \item \textbf{Manual do usu\'{a}rio}: Os pasos b\'{a}sicos para utilizar o sistema (inicializar, salvar, imprimir, etc.)
+  \item \textbf{Outros}....
+\end{itemize}
+Software Version
+\begin{itemize}
+  \item Ruby version: ruby-3.1.2
+  \item SQLite version:  1.4
+\end{itemize}
+
+
+
+Configuration
+\begin{itemize}
+  \item detele Gemfile.lock
+
+
+  \item update Ruby version of Gemfile to your version
+
+
+  \item then Bundle update
+  \item bundle install
+
+\end{itemize}
+
+Database initialization:  rails db:migrate
+
+
+
+
+
+
+
+
+
+Seguindo essas etapas, agora você deve conseguir acessar o sistema no localhost. Quaisquer dúvidas relacionadas ao funcionamento do sistema podem ser esclarecidas na seção Interface do Usuário.
